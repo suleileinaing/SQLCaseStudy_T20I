@@ -86,6 +86,7 @@ FROM
 GROUP BY Team) t LEFT JOIN
 (SELECT Winner , COUNT(*) as Wins
 FROM T20I
+WHERE YEAR(MatchDate) = 2024
 GROUP BY Winner
 ) w on t.Team = w.Winner
 ORDER BY Win_Rate DESC
